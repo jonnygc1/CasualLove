@@ -12,6 +12,7 @@ public class LoginActivity extends AppCompatActivity {
 
     //Key para on ActivityResult
     public final int REQUEST_CODE_REGISTRARSE = 1;
+    int y = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
