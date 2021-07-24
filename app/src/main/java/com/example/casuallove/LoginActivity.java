@@ -10,6 +10,7 @@ import android.view.View;
 
 public class LoginActivity extends AppCompatActivity {
 
+    //Key para on ActivityResult
     public final int REQUEST_CODE_REGISTRARSE = 1;
 
     @Override
