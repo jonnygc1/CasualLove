@@ -11,6 +11,7 @@ import android.view.View;
 public class LoginActivity extends AppCompatActivity {
 
     public final int REQUEST_CODE_REGISTRARSE = 1;
+    int i = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
