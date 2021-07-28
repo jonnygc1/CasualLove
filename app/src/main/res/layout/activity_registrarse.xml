@@ -32,35 +32,58 @@
                 android:background="@drawable/bt_redondo"
                 android:layout_marginBottom="20dp"
                 />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                >
+
+
+
+
+                <!--Con android:theme="@style/EditTextWhite" le cambiamos el estilo del TextImput y a blanco-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:startIconDrawable="@drawable/ic_person_gris"
+                    >
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/teNameUser"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/nombreUsuario"
+                        android:inputType="textEmailAddress"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_below="@+id/llText"
-                android:layout_alignParentBottom="true">
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                >
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <!--Con android:theme="@style/EditTextWhite" le cambiamos el estilo del TextImput y a blanco-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/nombre"
-                    android:textSize="20sp"
-                    android:textColor="@color/black_text"
-                    android:background="@drawable/bt_redondo"
-                    />
+                    app:startIconDrawable="@drawable/ic_email_gris"
+                    >
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/teEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/correo"
+                        android:inputType="textEmailAddress"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:gravity="center"
-                    android:text="@string/apellidos"
-                    android:textSize="20sp"
-                    android:textColor="@color/black_text"
-                    android:background="@drawable/bt_redondo"
-                    />
+                </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
 
@@ -68,102 +91,91 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_below="@+id/llText"
-                android:layout_alignParentBottom="true">
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                >
 
-                <EditText
+                <!--Con android:theme="@style/EditTextWhite" le cambiamos el estilo del TextImput y a blanco-->
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:maxLength="10"
-                    android:background="@drawable/bt_redondo"
-                    android:textColor="@color/black_text"
-                    />
+                    app:startIconDrawable="@drawable/ic_phone_android"
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:maxLength="20"
-                    android:background="@drawable/bt_redondo"
-                    android:textColor="@color/black_text"
-                    />
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/teTelefono"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/phone"
+                        android:inputType="numberSigned" />
+
+                </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/nickname"
-                android:textSize="20sp"
-                android:textColor="@color/black_text"
-                android:background="@drawable/bt_redondo"
-                android:layout_marginTop="20dp"
-                />
 
-            <EditText
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bt_redondo"
-                android:maxLength="12"
-                android:textColor="@color/black_text"
-                />
+                android:orientation="horizontal"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/correo_electronico"
-                android:textSize="20sp"
-                android:textColor="@color/black_text"
-                android:background="@drawable/bt_redondo"
-                android:layout_marginTop="20dp"
-                />
 
-            <EditText
+
+
+                <!--Con android:theme="@style/EditTextWhite" le cambiamos el estilo del TextImput y a blanco-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:endIconMode="password_toggle"
+                    app:startIconDrawable="@drawable/ic_password"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tePassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/contraseña"
+                        android:inputType="textPassword"/>
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bt_redondo"
-                android:maxLength="20"
-                android:textColor="@color/black_text"
-                />
+                android:orientation="horizontal"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/password_usuario"
-                android:textSize="20sp"
-                android:textColor="@color/black_text"
-                android:background="@drawable/bt_redondo"
-                android:layout_marginTop="20dp"
-                />
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bt_redondo"
-                android:inputType="textPassword"
-                android:maxLength="15"
-                android:textColor="@color/black_text"
-                />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/password_usuario_confirmacion"
-                android:textSize="20sp"
-                android:textColor="@color/black_text"
-                android:background="@drawable/bt_redondo"
-                android:layout_marginTop="20dp"
-                />
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bt_redondo"
-                android:inputType="textPassword"
-                android:maxLength="15"
-                android:textColor="@color/black_text"
-                />
+                <!--Con android:theme="@style/EditTextWhite" le cambiamos el estilo del TextImput y a blanco-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:endIconMode="password_toggle"
+                    app:startIconDrawable="@drawable/ic_password"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tePasswordConfirmar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/confirmarContraseña"
+                        android:inputType="textPassword"/>
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
 
             <Button
                 android:onClick="onClickSiguiente"

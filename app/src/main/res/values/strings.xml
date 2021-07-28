@@ -21,4 +21,12 @@
     <string name="fecha_nacimiento">Fecha de Nacimiento </string>
     <string name="direccion">Dirección </string>
 
+
+<!-- Nuevo registro    -->
+    <string name="nombreUsuario">Nombre Usuario</string>
+    <string name="phone">Telefono</string>
+    <string name="correo">Correo Electronico</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="confirmarContraseña">Confirmar Contraseña</string>
+
 </resources>
