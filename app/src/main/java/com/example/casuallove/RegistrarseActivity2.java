@@ -13,11 +13,19 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class RegistrarseActivity2 extends AppCompatActivity {
 
     Button btFechaNacimiento;
+
+    static boolean fechaVacia = true;
+    static int fechaDia = 0;
+    static int fechaMes = 0;
+    static int fechaAnio = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,11 +37,6 @@ public class RegistrarseActivity2 extends AppCompatActivity {
     }
 
     public void onClickElegirFechaNacimiento(View view) {
-
-        final Calendar c = Calendar.getInstance();
-        int dia = c.get(Calendar.DAY_OF_MONTH);
-        int mes = c.get(Calendar.MONTH);
-        int anio = c.get(Calendar.YEAR);
 
         Button button = (Button) view;
         showDatePickerDialog(button);
@@ -54,6 +57,11 @@ public class RegistrarseActivity2 extends AppCompatActivity {
                 String selectedDate = strDay  + "/" + strMonth + "/" + year;
                 button.setText(selectedDate);
 
+                fechaVacia = false;
+                fechaDia = Integer.parseInt(strDay);
+                //-1 porque antes sumamos porque enero es 0
+                fechaMes = Integer.parseInt(strMonth) - 1;
+                fechaAnio = year;
             }
         });
         newFragment.show(getSupportFragmentManager(), "datePicker");
@@ -86,12 +94,21 @@ public class RegistrarseActivity2 extends AppCompatActivity {
         @Override
         @NonNull
         public Dialog onCreateDialog(Bundle savedInstanceState) {
-            final Calendar c = Calendar.getInstance();
-            int year = c.get(Calendar.YEAR);
-            int month = c.get(Calendar.MONTH);
-            int day = c.get(Calendar.DAY_OF_MONTH);
 
-            return new DatePickerDialog(getActivity(), listener, year - 16, month, day);
+
+            if (fechaVacia) {
+                Calendar c = Calendar.getInstance();
+
+                int year = c.get(Calendar.YEAR);
+                int month = c.get(Calendar.MONTH);
+                int day = c.get(Calendar.DAY_OF_MONTH);
+
+                return new DatePickerDialog(getActivity(), listener, year - 16, month, day);
+            } else {
+
+                return new DatePickerDialog(getActivity(), listener, fechaAnio, fechaMes, fechaDia);
+            }
+
         }
 
     }
