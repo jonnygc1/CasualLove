@@ -6,6 +6,7 @@ import androidx.fragment.app.DialogFragment;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
@@ -75,6 +76,11 @@ public class RegistrarseActivity2 extends AppCompatActivity {
             str = 0 + "" + str;
         }
         return str;
+    }
+
+    public void onClickPrueba(View view) {
+        Intent intent = new Intent(this, FilterActivity.class);
+        startActivity(intent);
     }
 
     public static class DatePickerFragment extends DialogFragment {
