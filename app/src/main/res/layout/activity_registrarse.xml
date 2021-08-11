@@ -101,6 +101,64 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    app:startIconDrawable="@drawable/ic_edit_calendar"
+
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/btFechaNacimientos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/fecha_nacimiento"
+                        android:maxLength="20"
+                        android:onClick="onClickElegirFechaNacimiento"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                >
+
+                <!--Con android:theme="@style/EditTextWhite" le cambiamos el estilo del TextImput y a blanco-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:startIconDrawable="@drawable/ic_home"
+
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ttDireccion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/direccion"
+                        android:maxLength="20"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                >
+
+                <!--Con android:theme="@style/EditTextWhite" le cambiamos el estilo del TextImput y a blanco-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     app:startIconDrawable="@drawable/ic_phone_android"
 
                     >
@@ -125,9 +183,6 @@
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="50dp"
                 >
-
-
-
 
                 <!--Con android:theme="@style/EditTextWhite" le cambiamos el estilo del TextImput y a blanco-->
                 <com.google.android.material.textfield.TextInputLayout
@@ -181,6 +236,8 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
+
+
 
             <Button
                 android:onClick="onClickSiguiente"

@@ -33,39 +33,43 @@
                 android:layout_marginBottom="250dp"
                 />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/nombre_usuario"
-                android:textSize="20sp"
-                android:textColor="@color/black_text"
-                android:background="@drawable/bt_redondo"
-                />
 
-            <EditText
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bt_redondo"
-                android:textColor="@color/black_text"
-                />
+                app:startIconDrawable="@drawable/ic_person_gris"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/teNameUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/nombreUsuario"
+                    android:maxLength="15"
+                    android:inputType="textEmailAddress"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/password_usuario"
-                android:textSize="20sp"
-                android:textColor="@color/black_text"
-                android:background="@drawable/bt_redondo"
-                android:layout_marginTop="20dp"
-                />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bt_redondo"
-                android:inputType="textPassword"
-                android:textColor="@color/black_text"
-                />
+                app:endIconMode="password_toggle"
+                app:startIconDrawable="@drawable/ic_password"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tePassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/contraseña"
+                    android:maxLength="12"
+                    android:inputType="textPassword"/>
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
 
         </LinearLayout>
 
@@ -100,7 +104,6 @@
             android:text="@string/registrarse"
             android:layout_marginLeft="5dp"
             android:background="@drawable/bt_redondo_morado"
-
             />
     </LinearLayout>
 
