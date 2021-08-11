@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FilterActivity">
+    android:background="@drawable/bc_fondo_login"
+    tools:context=".AficionesActivity">
 
     <ScrollView
+        android:id="@+id/svBotones"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:ignore="MissingConstraints"
         android:layout_above="@+id/llLista"
-
         >
 
 
@@ -30,16 +31,17 @@
             android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
             app:cardElevation="2dp"
-
-
             >
 
             <LinearLayout
+                android:id="@+id/llCine"
+                android:onClick="onClickSeleccionar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
+                android:background="@drawable/bc_fondo_login"
                 >
 
                 <ImageView
@@ -75,11 +77,14 @@
             >
 
             <LinearLayout
+                android:id="@+id/llVideojuegos"
+                android:onClick="onClickSeleccionar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
+                android:background="@drawable/bc_fondo_login"
                 >
 
                 <ImageView
@@ -116,11 +121,14 @@
             >
 
             <LinearLayout
+                android:id="@+id/llMusica"
+                android:onClick="onClickSeleccionar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
+                android:background="@drawable/bc_fondo_login"
                 >
 
                 <ImageView
@@ -156,11 +164,14 @@
             >
 
             <LinearLayout
+                android:id="@+id/llPintura"
+                android:onClick="onClickSeleccionar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
+                android:background="@drawable/bc_fondo_login"
                 >
 
                 <ImageView
@@ -196,11 +207,14 @@
                 >
 
                 <LinearLayout
+                    android:id="@+id/llComics"
+                    android:onClick="onClickSeleccionar"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
+                    android:background="@drawable/bc_fondo_login"
                     >
 
                     <ImageView
@@ -236,11 +250,14 @@
                 >
 
                 <LinearLayout
+                    android:id="@+id/llLiteratura"
+                    android:onClick="onClickSeleccionar"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
+                    android:background="@drawable/bc_fondo_login"
                     >
 
                     <ImageView
@@ -275,11 +292,14 @@
                 >
 
                 <LinearLayout
+                    android:id="@+id/llDeporte"
+                    android:onClick="onClickSeleccionar"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
+                    android:background="@drawable/bc_fondo_login"
                     >
 
                     <ImageView
@@ -314,11 +334,14 @@
                 >
 
                 <LinearLayout
+                    android:id="@+id/llFiesta"
+                    android:onClick="onClickSeleccionar"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
+                    android:background="@drawable/bc_fondo_login"
                     >
 
                     <ImageView

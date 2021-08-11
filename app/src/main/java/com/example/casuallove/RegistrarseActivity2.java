@@ -12,12 +12,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
-import android.widget.EditText;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
 public class RegistrarseActivity2 extends AppCompatActivity {
 
@@ -79,7 +75,7 @@ public class RegistrarseActivity2 extends AppCompatActivity {
     }
 
     public void onClickPrueba(View view) {
-        Intent intent = new Intent(this, FilterActivity.class);
+        Intent intent = new Intent(this, AficionesActivity.class);
         startActivity(intent);
     }
 
