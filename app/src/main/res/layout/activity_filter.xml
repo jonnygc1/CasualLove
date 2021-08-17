@@ -7,392 +7,275 @@
     android:background="@drawable/bc_fondo_login"
     tools:context=".AficionesActivity">
 
-    <ScrollView
-        android:id="@+id/svBotones"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints"
-        android:layout_above="@+id/llLista"
-        >
+        android:text="@string/adiciones"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:textColor="@color/black_text"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/bt_redondo"
+        android:layout_marginBottom="20dp"
+        />
 
+    <ScrollView
+        android:id="@+id/svAficiones"
+        android:layout_width="match_parent"
+        android:layout_height="310dp"
+        android:layout_below="@+id/tvTitulo"
+        android:layout_margin="10dp">
 
         <LinearLayout
+            android:id="@+id/llAficiones"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
-        <androidx.cardview.widget.CardView
-
-            android:id="@+id/cardViewFood"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
-            app:cardElevation="2dp"
-            >
 
             <LinearLayout
+                android:onClick="onClickSeleccionar"
                 android:id="@+id/llCine"
-                android:onClick="onClickSeleccionar"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/bc_fondo_login"
-                >
+                android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/ic_person_gris"
-
-                    android:layout_gravity="center_vertical"
-                    android:padding="7dp" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_person_gris"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="50dp"
+                    />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="center_vertical"
-                    android:layout_marginLeft="20dp"
-                    android:textSize="20dp"
-                    android:text="@string/cine" />
-
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cine"
+                    android:textSize="35sp"
+                    />
             </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-
-            android:id="@+id/cardViewEducacion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
-            app:cardElevation="2dp"
-            >
-
             <LinearLayout
+                android:onClick="onClickSeleccionar"
                 android:id="@+id/llVideojuegos"
-                android:onClick="onClickSeleccionar"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/bc_fondo_login"
-                >
+                android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/ic_person_gris"
-
-                    android:layout_gravity="center_vertical"
-                    android:padding="10dp" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_person_gris"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="50dp"
+                    />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="center_vertical"
-                    android:layout_marginLeft="20dp"
-                    android:textSize="20dp"
-                    android:text="@string/videojuegos" />
-
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/videojuegos"
+                    android:textSize="35sp"
+                    />
             </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
+            <LinearLayout
+                android:onClick="onClickSeleccionar"
+                android:id="@+id/llLiteratura"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bc_fondo_login"
+                android:orientation="horizontal">
 
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_person_gris"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="50dp"
+                    />
 
-        <androidx.cardview.widget.CardView
-
-            android:id="@+id/cardViewManitas"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
-            app:cardElevation="2dp"
-            >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/literaura"
+                    android:textSize="35sp"
+                    />
+            </LinearLayout>
 
             <LinearLayout
+                android:onClick="onClickSeleccionar"
                 android:id="@+id/llMusica"
-                android:onClick="onClickSeleccionar"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/bc_fondo_login"
-                >
+                android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/ic_person_gris"
-
-                    android:layout_gravity="center_vertical"
-                    android:padding="10dp" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_person_gris"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="50dp"
+                    />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="center_vertical"
-                    android:layout_marginLeft="20dp"
-                    android:textSize="20dp"
-                    android:text="@string/musica" />
-
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/musica"
+                    android:textSize="35sp"
+                    />
             </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-
-
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
-            app:cardElevation="2dp"
-            >
 
             <LinearLayout
-                android:id="@+id/llPintura"
                 android:onClick="onClickSeleccionar"
+                android:id="@+id/llComics"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/bc_fondo_login"
-                >
+                android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/ic_person_gris"
-
-                    android:layout_gravity="center_vertical"
-                    android:padding="10dp" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_person_gris"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="50dp"
+                    />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="center_vertical"
-                    android:layout_marginLeft="20dp"
-                    android:textSize="20dp"
-                    android:text="@string/pintura" />
-
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/comics"
+                    android:textSize="35sp"
+                    />
             </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-
-
+            <LinearLayout
+                android:onClick="onClickSeleccionar"
+                android:id="@+id/llPintura"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="10dp"
-                app:cardElevation="2dp"
-                >
+                android:background="@drawable/bc_fondo_login"
+                android:orientation="horizontal">
 
-                <LinearLayout
-                    android:id="@+id/llComics"
-                    android:onClick="onClickSeleccionar"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:layout_marginLeft="20dp"
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_person_gris"
+                    android:layout_gravity="center"
                     android:layout_marginRight="20dp"
-                    android:background="@drawable/bc_fondo_login"
-                    >
+                    android:layout_marginLeft="50dp"
+                    />
 
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/ic_person_gris"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pintura"
+                    android:textSize="35sp"
+                    />
+            </LinearLayout>
 
-                        android:layout_gravity="center_vertical"
-                        android:padding="10dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:gravity="center_vertical"
-                        android:layout_marginLeft="20dp"
-                        android:textSize="20dp"
-                        android:text="@string/cominics" />
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-
-                android:id="@+id/cardViewAyuda"
+            <LinearLayout
+                android:onClick="onClickSeleccionar"
+                android:id="@+id/llDeporte"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="10dp"
-                app:cardElevation="2dp"
-                >
+                android:background="@drawable/bc_fondo_login"
+                android:orientation="horizontal">
 
-                <LinearLayout
-                    android:id="@+id/llLiteratura"
-                    android:onClick="onClickSeleccionar"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:layout_marginLeft="20dp"
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_person_gris"
+                    android:layout_gravity="center"
                     android:layout_marginRight="20dp"
-                    android:background="@drawable/bc_fondo_login"
-                    >
+                    android:layout_marginLeft="50dp"
+                    />
 
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/ic_person_gris"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/deporte"
+                    android:textSize="35sp"
+                    />
+            </LinearLayout>
 
-                        android:layout_gravity="center_vertical"
-                        android:padding="10dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:gravity="center_vertical"
-                        android:layout_marginLeft="20dp"
-                        android:textSize="20dp"
-                        android:text="@string/literaura" />
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-
+            <LinearLayout
+                android:onClick="onClickSeleccionar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="10dp"
-                app:cardElevation="2dp"
-                >
+                android:background="@drawable/bc_fondo_login"
+                android:orientation="horizontal">
 
-                <LinearLayout
-                    android:id="@+id/llDeporte"
-                    android:onClick="onClickSeleccionar"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:layout_marginLeft="20dp"
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_action_otros"
+                    android:layout_gravity="center"
                     android:layout_marginRight="20dp"
-                    android:background="@drawable/bc_fondo_login"
-                    >
+                    android:layout_marginLeft="50dp"
+                    />
 
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/ic_person_gris"
-
-                        android:layout_gravity="center_vertical"
-                        android:padding="10dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:gravity="center_vertical"
-                        android:layout_marginLeft="20dp"
-                        android:textSize="20dp"
-                        android:text="@string/deporte" />
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="10dp"
-                app:cardElevation="2dp"
-                >
-
-                <LinearLayout
-                    android:id="@+id/llFiesta"
-                    android:onClick="onClickSeleccionar"
+                <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:background="@drawable/bc_fondo_login"
-                    >
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/ic_person_gris"
-
-                        android:layout_gravity="center_vertical"
-                        android:padding="10dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:gravity="center_vertical"
-                        android:layout_marginLeft="20dp"
-                        android:textSize="20dp"
-                        android:text="@string/fiesta" />
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
+                    android:layout_height="wrap_content"
+                    android:text="@string/fiesta"
+                    android:textSize="35sp"
+                    />
+            </LinearLayout>
 
         </LinearLayout>
-
 
     </ScrollView>
 
     <LinearLayout
-        android:id="@+id/llLista"
+        android:id="@+id/tvOtros"
         android:layout_width="match_parent"
-        android:layout_height="90dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_alignParentBottom="true"
-        >
+        android:layout_below="@id/svAficiones">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="aqui los gustos"/>
+            android:layout_weight="1"
+            android:text="@string/otros"
+            android:textSize="35sp"
+            android:layout_marginLeft="10dp"
+            />
 
-
+        <ImageView
+            android:onClick="onClickAnadirAficion"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/ic_action_otros"
+            android:layout_gravity="center"
+            android:layout_marginRight="20dp"
+            />
     </LinearLayout>
 
+    <ScrollView
+        android:id="@+id/svOtros"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_below="@id/tvOtros"
+        android:layout_margin="10dp">
 
-
-
-
-
-
-
-
-
-
+        <LinearLayout
+            android:id="@+id/llOtros"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        </LinearLayout>
+    </ScrollView>
 </RelativeLayout>

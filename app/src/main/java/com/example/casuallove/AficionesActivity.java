@@ -17,9 +17,10 @@ import java.util.Objects;
 
 public class AficionesActivity extends AppCompatActivity {
 
-    private ScrollView svBotones;
+    private ScrollView svAficiones;
+    private ScrollView svOtros;
 
-    private int[] botones = {R.id.llCine, R.id.llVideojuegos, R.id.llMusica, R.id.llPintura, R.id.llComics, R.id.llLiteratura, R.id.llDeporte, R.id.llFiesta};
+    //private int[] botones = {R.id.llCine, R.id.llVideojuegos, R.id.llMusica, R.id.llPintura, R.id.llComics, R.id.llLiteratura, R.id.llDeporte, R.id.llFiesta};
     private int[] botonesSeleccionados = {0, 0, 0, 0, 0, 0, 0, 0};
 
     @Override
@@ -27,7 +28,8 @@ public class AficionesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_filter);
 
-        svBotones = findViewById(R.id.svBotones);
+        svAficiones = findViewById(R.id.svAficiones);
+        svOtros = findViewById(R.id.svOtros);
     }
 
 
@@ -35,7 +37,7 @@ public class AficionesActivity extends AppCompatActivity {
     public void onClickSeleccionar(View view) {
 
         LinearLayout llGusto = (LinearLayout) view;
-        Log.d("XYZ", "Numero de ll: " + svBotones.getChildAt(llGusto.getId()));
+        Log.d("XYZ", "Numero de ll: " + svAficiones.getChildAt(llGusto.getId()));
 
         //Deprecated
         //Objects.equals(llGusto.getBackground().getConstantState(), getResources().getDrawable(R.drawable.bc_seleccionado).getConstantState())
@@ -46,7 +48,15 @@ public class AficionesActivity extends AppCompatActivity {
         } else {
 
             llGusto.setBackgroundResource(R.drawable.bc_seleccionado);
+
+            //recorrer si coincide
+
         }
+
+    }
+
+    public void onClickAnadirAficion(View view) {
+
 
     }
 }

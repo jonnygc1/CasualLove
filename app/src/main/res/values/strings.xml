@@ -21,8 +21,8 @@
     <string name="fecha_nacimiento">Fecha de Nacimiento </string>
     <string name="direccion">Dirección </string>
 
-
-    <!-- Nuevo registro    -->
+    <!-- AficionesActivity    -->
+    <string name="adiciones">Aficiones </string>
     <string name="nombreUsuario">Nombre Usuario</string>
     <string name="phone">Telefono</string>
     <string name="correo">Correo Electronico</string>
@@ -30,11 +30,12 @@
     <string name="confirmarContraseña">Confirmar Contraseña</string>
     <string name="cine">Cine</string>
     <string name="videojuegos">Videojuegos</string>
-    <string name="musica">Musica</string>
+    <string name="musica">Música</string>
     <string name="pintura">Pintura</string>
-    <string name="cominics">Cómics</string>
+    <string name="comics">Cómics</string>
     <string name="literaura">Literatura</string>
     <string name="deporte">Deporte</string>
     <string name="fiesta">Fiesta</string>
+    <string name="otros">Otros </string>
 
 </resources>
