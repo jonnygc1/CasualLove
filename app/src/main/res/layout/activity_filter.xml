@@ -39,13 +39,13 @@
                 android:id="@+id/llCine"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bc_fondo_login"
+                android:background="@drawable/bt_redondo_morado"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/ic_person_gris"
+                    android:background="@drawable/ic_action_cine"
                     android:layout_gravity="center"
                     android:layout_marginRight="20dp"
                     android:layout_marginLeft="50dp"
@@ -64,13 +64,13 @@
                 android:id="@+id/llVideojuegos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bc_fondo_login"
+                android:background="@drawable/bt_redondo_morado"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/ic_person_gris"
+                    android:background="@drawable/ic_action_videojuego"
                     android:layout_gravity="center"
                     android:layout_marginRight="20dp"
                     android:layout_marginLeft="50dp"
@@ -89,13 +89,13 @@
                 android:id="@+id/llLiteratura"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bc_fondo_login"
+                android:background="@drawable/bt_redondo_morado"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/ic_person_gris"
+                    android:background="@drawable/ic_action_literatura"
                     android:layout_gravity="center"
                     android:layout_marginRight="20dp"
                     android:layout_marginLeft="50dp"
@@ -114,13 +114,13 @@
                 android:id="@+id/llMusica"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bc_fondo_login"
+                android:background="@drawable/bt_redondo_morado"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/ic_person_gris"
+                    android:background="@drawable/ic_action_musica"
                     android:layout_gravity="center"
                     android:layout_marginRight="20dp"
                     android:layout_marginLeft="50dp"
@@ -139,13 +139,13 @@
                 android:id="@+id/llComics"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bc_fondo_login"
+                android:background="@drawable/bt_redondo_morado"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/ic_person_gris"
+                    android:background="@drawable/ic_action_comic"
                     android:layout_gravity="center"
                     android:layout_marginRight="20dp"
                     android:layout_marginLeft="50dp"
@@ -164,13 +164,13 @@
                 android:id="@+id/llPintura"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bc_fondo_login"
+                android:background="@drawable/bt_redondo_morado"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/ic_person_gris"
+                    android:background="@drawable/ic_action_pintura"
                     android:layout_gravity="center"
                     android:layout_marginRight="20dp"
                     android:layout_marginLeft="50dp"
@@ -189,13 +189,13 @@
                 android:id="@+id/llDeporte"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bc_fondo_login"
+                android:background="@drawable/bt_redondo_morado"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/ic_person_gris"
+                    android:background="@drawable/ic_action_deporte"
                     android:layout_gravity="center"
                     android:layout_marginRight="20dp"
                     android:layout_marginLeft="50dp"
@@ -213,13 +213,13 @@
                 android:onClick="onClickSeleccionar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bc_fondo_login"
+                android:background="@drawable/bt_redondo_morado"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/ic_action_otros"
+                    android:background="@drawable/ic_action_fiesta"
                     android:layout_gravity="center"
                     android:layout_marginRight="20dp"
                     android:layout_marginLeft="50dp"
