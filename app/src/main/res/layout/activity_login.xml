@@ -92,7 +92,7 @@
             android:textSize="20sp"
             android:text="@string/iniciar_sesion"
             android:layout_marginRight="5dp"
-            android:background="@drawable/bt_redondo_morado"
+            android:background="@drawable/bc_redondo_morado"
             />
         <Button
             android:onClick="onClickIrRegistrarse"
@@ -103,7 +103,7 @@
             android:textSize="20sp"
             android:text="@string/registrarse"
             android:layout_marginLeft="5dp"
-            android:background="@drawable/bt_redondo_morado"
+            android:background="@drawable/bc_redondo_morado"
             />
     </LinearLayout>
 

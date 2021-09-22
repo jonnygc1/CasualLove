@@ -39,7 +39,7 @@
                 android:id="@+id/llCine"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bt_redondo_morado"
+                android:background="@drawable/bc_redondo_morado"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -64,7 +64,7 @@
                 android:id="@+id/llVideojuegos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bt_redondo_morado"
+                android:background="@drawable/bc_redondo_morado"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -89,7 +89,7 @@
                 android:id="@+id/llLiteratura"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bt_redondo_morado"
+                android:background="@drawable/bc_redondo_morado"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -114,7 +114,7 @@
                 android:id="@+id/llMusica"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bt_redondo_morado"
+                android:background="@drawable/bc_redondo_morado"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -139,7 +139,7 @@
                 android:id="@+id/llComics"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bt_redondo_morado"
+                android:background="@drawable/bc_redondo_morado"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -164,7 +164,7 @@
                 android:id="@+id/llPintura"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bt_redondo_morado"
+                android:background="@drawable/bc_redondo_morado"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -189,7 +189,7 @@
                 android:id="@+id/llDeporte"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bt_redondo_morado"
+                android:background="@drawable/bc_redondo_morado"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -213,7 +213,7 @@
                 android:onClick="onClickSeleccionar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bt_redondo_morado"
+                android:background="@drawable/bc_redondo_morado"
                 android:orientation="horizontal">
 
                 <ImageView
