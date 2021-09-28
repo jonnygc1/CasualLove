@@ -1,14 +1,7 @@
 package com.example.casuallove;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-
 import android.annotation.SuppressLint;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.LayerDrawable;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,9 +11,19 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
+import android.widget.Toast;
+
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class AficionesActivity extends AppCompatActivity {
 
@@ -103,5 +106,64 @@ public class AficionesActivity extends AppCompatActivity {
             }
         });
         llOtros.addView(relativeLayout);
+    }
+
+    public void onClickCargarAficiones(View view) {
+
+        LinearLayout llGusto;
+        for (int i = 0; i < llAficiones.getChildCount(); i++){
+
+            llGusto = (LinearLayout) llAficiones.getChildAt(i);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                if (!(llGusto.getBackground().getConstantState().equals(llGusto.getContext().getDrawable(R.drawable.bc_redondo_morado).getConstantState()))) {
+
+                    botonesSeleccionados[i] = 1;
+                }
+            }
+        }
+
+        ejecutarServicio();
+    }
+
+    private void ejecutarServicio() {
+
+        HttpsTrustManager.allowAllSSL();
+
+        String URL = "";
+        URL = Uri
+                .parse("https://android.casuallove.es/insertar_aficiones_cl.php")
+                .buildUpon()
+                .appendQueryParameter("id", null)
+                .appendQueryParameter("cine", botonesSeleccionados[0] + "")
+                .appendQueryParameter("videojuegos", botonesSeleccionados[1] + "")
+                .appendQueryParameter("litaratura", botonesSeleccionados[2] + "")
+                .appendQueryParameter("musica", botonesSeleccionados[3] + "")
+                .appendQueryParameter("comics", botonesSeleccionados[4] + "")
+                .appendQueryParameter("pintura", botonesSeleccionados[5] + "")
+                .appendQueryParameter("deporte", botonesSeleccionados[6] + "")
+                .appendQueryParameter("fiesta", botonesSeleccionados[7] + "")
+                .appendQueryParameter("aficion1", "")
+                .appendQueryParameter("aficion2", "")
+                .appendQueryParameter("aficion3", "")
+                .build()
+                .toString();
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        //Si procesa o no procesa
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                Toast.makeText(getApplicationContext(), R.string.creado_correctamente, Toast.LENGTH_SHORT).show();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        requestQueue.add(stringRequest);
     }
 }

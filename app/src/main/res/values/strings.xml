@@ -38,5 +38,6 @@
     <string name="fiesta">Fiesta</string>
     <string name="otros">Otros </string>
     <string name="escribe_aficion">Escribe afición </string>
+    <string name="creado_correctamente">Creado correctamente... </string>
 
 </resources>
