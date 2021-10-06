@@ -125,6 +125,7 @@ public class AficionesActivity extends AppCompatActivity {
         ejecutarServicio();
     }
 
+    //Manda datos al servidor
     private void ejecutarServicio() {
 
         HttpsTrustManager.allowAllSSL();
