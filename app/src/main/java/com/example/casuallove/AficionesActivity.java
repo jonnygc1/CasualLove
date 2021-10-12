@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -33,6 +34,8 @@ public class AficionesActivity extends AppCompatActivity {
     private LinearLayout llOtros;
     private ArrayList<String> alNombreAficiones = new ArrayList<>();
 
+    private CheckBox cb_cine, cb_videojuegos, cb_literatura, cb_musica, cb_comics, cb_pintura, cb_deporte, cb_fiesta;
+
     //private int[] botones = {R.id.llCine, R.id.llVideojuegos, R.id.llMusica, R.id.llPintura, R.id.llComics, R.id.llLiteratura, R.id.llDeporte, R.id.llFiesta};
     private int[] botonesSeleccionados = {0, 0, 0, 0, 0, 0, 0, 0};
 
@@ -45,6 +48,16 @@ public class AficionesActivity extends AppCompatActivity {
         llAficiones = findViewById(R.id.llAficiones);
         svOtros = findViewById(R.id.svOtros);
         llOtros = findViewById(R.id.llOtros);
+
+        cb_cine = findViewById(R.id.cb_cine);
+        cb_videojuegos = findViewById(R.id.cb_videojuegos);
+        cb_literatura = findViewById(R.id.cb_literatura);
+        cb_musica = findViewById(R.id.cb_musica);
+        cb_comics = findViewById(R.id.cb_comics);
+        cb_pintura = findViewById(R.id.cb_pintura);
+        cb_deporte = findViewById(R.id.cb_deporte);
+        cb_fiesta = findViewById(R.id.cb_fiesta);
+
     }
 
 
