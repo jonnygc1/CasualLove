@@ -37,14 +37,15 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:onClick="onClickSeleccionar"
                 android:id="@+id/llCine"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bc_redondo_morado"
                 android:orientation="horizontal">
 
-                <CheckBox android:id="@+id/cb_cine"
+                <CheckBox
+                    android:id="@+id/cb_cine"
+                    android:onClick="onClickSeleccionar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -67,14 +68,15 @@
             </LinearLayout>
 
             <LinearLayout
-                android:onClick="onClickSeleccionar"
                 android:id="@+id/llVideojuegos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bc_redondo_morado"
                 android:orientation="horizontal">
 
-                <CheckBox android:id="@+id/cb_videojuegos"
+                <CheckBox
+                    android:id="@+id/cb_videojuegos"
+                    android:onClick="onClickSeleccionar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -98,14 +100,15 @@
             </LinearLayout>
 
             <LinearLayout
-                android:onClick="onClickSeleccionar"
                 android:id="@+id/llLiteratura"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bc_redondo_morado"
                 android:orientation="horizontal">
 
-                <CheckBox android:id="@+id/cb_literatura"
+                <CheckBox
+                    android:id="@+id/cb_literatura"
+                    android:onClick="onClickSeleccionar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -129,14 +132,15 @@
             </LinearLayout>
 
             <LinearLayout
-                android:onClick="onClickSeleccionar"
                 android:id="@+id/llMusica"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bc_redondo_morado"
                 android:orientation="horizontal">
 
-                <CheckBox android:id="@+id/cb_musica"
+                <CheckBox
+                    android:id="@+id/cb_musica"
+                    android:onClick="onClickSeleccionar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -160,14 +164,15 @@
             </LinearLayout>
 
             <LinearLayout
-                android:onClick="onClickSeleccionar"
                 android:id="@+id/llComics"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bc_redondo_morado"
                 android:orientation="horizontal">
 
-                <CheckBox android:id="@+id/cb_comics"
+                <CheckBox
+                    android:id="@+id/cb_comics"
+                    android:onClick="onClickSeleccionar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -191,14 +196,15 @@
             </LinearLayout>
 
             <LinearLayout
-                android:onClick="onClickSeleccionar"
                 android:id="@+id/llPintura"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bc_redondo_morado"
                 android:orientation="horizontal">
 
-                <CheckBox android:id="@+id/cb_pintura"
+                <CheckBox
+                    android:id="@+id/cb_pintura"
+                    android:onClick="onClickSeleccionar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -222,14 +228,15 @@
             </LinearLayout>
 
             <LinearLayout
-                android:onClick="onClickSeleccionar"
                 android:id="@+id/llDeporte"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bc_redondo_morado"
                 android:orientation="horizontal">
 
-                <CheckBox android:id="@+id/cb_deporte"
+                <CheckBox
+                    android:id="@+id/cb_deporte"
+                    android:onClick="onClickSeleccionar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -253,13 +260,14 @@
             </LinearLayout>
 
             <LinearLayout
-                android:onClick="onClickSeleccionar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bc_redondo_morado"
                 android:orientation="horizontal">
 
-                <CheckBox android:id="@+id/cb_fiesta"
+                <CheckBox
+                    android:id="@+id/cb_fiesta"
+                    android:onClick="onClickSeleccionar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"

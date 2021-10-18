@@ -1,10 +1,7 @@
 package com.example.casuallove;
 
-import android.annotation.SuppressLint;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CheckBox;
@@ -14,7 +11,6 @@ import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
@@ -35,9 +31,11 @@ public class AficionesActivity extends AppCompatActivity {
     private ArrayList<String> alNombreAficiones = new ArrayList<>();
 
     private CheckBox cb_cine, cb_videojuegos, cb_literatura, cb_musica, cb_comics, cb_pintura, cb_deporte, cb_fiesta;
+    private CheckBox[] checkBoxes;
 
     //private int[] botones = {R.id.llCine, R.id.llVideojuegos, R.id.llMusica, R.id.llPintura, R.id.llComics, R.id.llLiteratura, R.id.llDeporte, R.id.llFiesta};
     private int[] botonesSeleccionados = {0, 0, 0, 0, 0, 0, 0, 0};
+    private ArrayList<CheckBox> alCheckBoxes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +47,7 @@ public class AficionesActivity extends AppCompatActivity {
         svOtros = findViewById(R.id.svOtros);
         llOtros = findViewById(R.id.llOtros);
 
-        cb_cine = findViewById(R.id.cb_cine);
+        /*cb_cine = findViewById(R.id.cb_cine);
         cb_videojuegos = findViewById(R.id.cb_videojuegos);
         cb_literatura = findViewById(R.id.cb_literatura);
         cb_musica = findViewById(R.id.cb_musica);
@@ -58,49 +56,24 @@ public class AficionesActivity extends AppCompatActivity {
         cb_deporte = findViewById(R.id.cb_deporte);
         cb_fiesta = findViewById(R.id.cb_fiesta);
 
+        alCheckBoxes = (ArrayList<CheckBox>) Arrays.asList(cb_cine, cb_videojuegos, cb_literatura, cb_musica, cb_comics, cb_pintura, cb_deporte, cb_fiesta);*/
     }
 
-
-    @SuppressLint("UseCompatLoadingForDrawables")
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void onClickSeleccionar(View view) {
 
-        LinearLayout llGusto = (LinearLayout) view;
-        Log.d("XYZ", "Numero de ll: " + llAficiones.getChildAt(llGusto.getId()));
+        CheckBox checkBox = (CheckBox) view;
+        LinearLayout linearLayout = (LinearLayout) checkBox.getParent();
 
-        //Deprecated
-        /*if (Objects.equals(view.getBackground().getConstantState(), AficionesActivity.getResources().getDrawable(R.drawable.bc_redondo_verde).getConstantState())) {
+        if (checkBox.isChecked()) {
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                llGusto.setBackground(getDrawable(R.drawable.bc_redondo_morado);
-            }
+            checkBox.setBackgroundResource(R.drawable.bc_redondo_verde);
+            linearLayout.setBackgroundResource(R.drawable.bc_redondo_verde);
         } else {
 
-            llGusto.setBackgroundResource(R.drawable.bc_redondo_verde);
-        }*/
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            if (llGusto.getBackground().getConstantState().equals(llGusto.getContext().getDrawable(R.drawable.bc_redondo_verde).getConstantState())) {
-
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    llGusto.setBackground(getDrawable(R.drawable.bc_redondo_morado));
-                }
-            } else {
-
-                llGusto.setBackgroundResource(R.drawable.bc_redondo_verde);
-            }
+            checkBox.setBackgroundResource(R.drawable.bc_redondo_morado);
+            linearLayout.setBackgroundResource(R.drawable.bc_redondo_morado);
         }
-        /*Drawable drawable1 = llGusto.getBackground();
-        Drawable drawable2 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.bc_redondo_verde);
 
-        if (drawable1 == drawable2) {
-
-            Log.d("XYZ", "Dentro2");
-            llGusto.setBackgroundResource(R.drawable.bc_redondo_morado);
-        } else {
-            Log.d("XYZ", "Dentro1");
-            llGusto.setBackgroundResource(R.drawable.bc_redondo_verde);
-        }*/
     }
 
     public void onClickAnadirAficion(View view) {
@@ -123,15 +96,14 @@ public class AficionesActivity extends AppCompatActivity {
 
     public void onClickCargarAficiones(View view) {
 
-        LinearLayout llGusto;
+        //CheckBox checkBox;
+
         for (int i = 0; i < llAficiones.getChildCount(); i++){
 
-            llGusto = (LinearLayout) llAficiones.getChildAt(i);
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                if (!(llGusto.getBackground().getConstantState().equals(llGusto.getContext().getDrawable(R.drawable.bc_redondo_morado).getConstantState()))) {
+            CheckBox checkBox = (CheckBox) llAficiones.getChildAt(i);
+            if (checkBox.isChecked()) {
 
-                    botonesSeleccionados[i] = 1;
-                }
+                botonesSeleccionados[i] = 1;
             }
         }
 
@@ -143,8 +115,7 @@ public class AficionesActivity extends AppCompatActivity {
 
         HttpsTrustManager.allowAllSSL();
 
-        String URL = "";
-        URL = Uri
+        String URL = Uri
                 .parse("https://android.casuallove.es/insertar_aficiones_cl.php")
                 .buildUpon()
                 .appendQueryParameter("id", null)
