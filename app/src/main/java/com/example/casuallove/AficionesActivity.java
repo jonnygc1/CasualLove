@@ -98,9 +98,11 @@ public class AficionesActivity extends AppCompatActivity {
 
         //CheckBox checkBox;
 
+        LinearLayout llAficion;
         for (int i = 0; i < llAficiones.getChildCount(); i++){
 
-            CheckBox checkBox = (CheckBox) llAficiones.getChildAt(i);
+            llAficion = (LinearLayout) llAficiones.getChildAt(i);
+            CheckBox checkBox = (CheckBox) llAficion.getChildAt(0);
             if (checkBox.isChecked()) {
 
                 botonesSeleccionados[i] = 1;
