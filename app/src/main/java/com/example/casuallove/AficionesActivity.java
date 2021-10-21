@@ -2,6 +2,7 @@ package com.example.casuallove;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CheckBox;
@@ -106,6 +107,7 @@ public class AficionesActivity extends AppCompatActivity {
             if (checkBox.isChecked()) {
 
                 botonesSeleccionados[i] = 1;
+                Log.d("XYZ", "Numero: " + i);
             }
         }
 
@@ -123,7 +125,7 @@ public class AficionesActivity extends AppCompatActivity {
                 .appendQueryParameter("id", null)
                 .appendQueryParameter("cine", botonesSeleccionados[0] + "")
                 .appendQueryParameter("videojuegos", botonesSeleccionados[1] + "")
-                .appendQueryParameter("litaratura", botonesSeleccionados[2] + "")
+                .appendQueryParameter("literatura", botonesSeleccionados[2] + "")
                 .appendQueryParameter("musica", botonesSeleccionados[3] + "")
                 .appendQueryParameter("comics", botonesSeleccionados[4] + "")
                 .appendQueryParameter("pintura", botonesSeleccionados[5] + "")
