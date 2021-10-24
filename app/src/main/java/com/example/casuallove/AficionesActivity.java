@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -38,6 +39,8 @@ public class AficionesActivity extends AppCompatActivity {
     private int[] botonesSeleccionados = {0, 0, 0, 0, 0, 0, 0, 0};
     private ArrayList<CheckBox> alCheckBoxes;
 
+    private String[] otrasAficiones = {"", "", ""};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,16 +51,6 @@ public class AficionesActivity extends AppCompatActivity {
         svOtros = findViewById(R.id.svOtros);
         llOtros = findViewById(R.id.llOtros);
 
-        /*cb_cine = findViewById(R.id.cb_cine);
-        cb_videojuegos = findViewById(R.id.cb_videojuegos);
-        cb_literatura = findViewById(R.id.cb_literatura);
-        cb_musica = findViewById(R.id.cb_musica);
-        cb_comics = findViewById(R.id.cb_comics);
-        cb_pintura = findViewById(R.id.cb_pintura);
-        cb_deporte = findViewById(R.id.cb_deporte);
-        cb_fiesta = findViewById(R.id.cb_fiesta);
-
-        alCheckBoxes = (ArrayList<CheckBox>) Arrays.asList(cb_cine, cb_videojuegos, cb_literatura, cb_musica, cb_comics, cb_pintura, cb_deporte, cb_fiesta);*/
     }
 
     public void onClickSeleccionar(View view) {
@@ -102,6 +95,7 @@ public class AficionesActivity extends AppCompatActivity {
         LinearLayout llAficion;
         for (int i = 0; i < llAficiones.getChildCount(); i++){
 
+            //Recorriendo de parent a child
             llAficion = (LinearLayout) llAficiones.getChildAt(i);
             CheckBox checkBox = (CheckBox) llAficion.getChildAt(0);
             if (checkBox.isChecked()) {
@@ -109,6 +103,16 @@ public class AficionesActivity extends AppCompatActivity {
                 botonesSeleccionados[i] = 1;
                 Log.d("XYZ", "Numero: " + i);
             }
+        }
+
+        for (int i = 0; i < llOtros.getChildCount(); i++){
+
+            //Recorriendo de parent a child
+            RelativeLayout relativeLayout = (RelativeLayout) llOtros.getChildAt(i);
+            LinearLayout linearLayout = (LinearLayout) relativeLayout.getChildAt(0);
+            EditText editText = (EditText) linearLayout.getChildAt(1);
+            otrasAficiones[i] = editText.getText().toString();
+            Log.d("XYZ", "Texto: " + otrasAficiones[i]);
         }
 
         ejecutarServicio();
@@ -131,9 +135,9 @@ public class AficionesActivity extends AppCompatActivity {
                 .appendQueryParameter("pintura", botonesSeleccionados[5] + "")
                 .appendQueryParameter("deporte", botonesSeleccionados[6] + "")
                 .appendQueryParameter("fiesta", botonesSeleccionados[7] + "")
-                .appendQueryParameter("aficion1", "")
-                .appendQueryParameter("aficion2", "")
-                .appendQueryParameter("aficion3", "")
+                .appendQueryParameter("aficion1", otrasAficiones[0])
+                .appendQueryParameter("aficion2", otrasAficiones[1])
+                .appendQueryParameter("aficion3", otrasAficiones[2])
                 .build()
                 .toString();
 
