@@ -32,6 +32,7 @@
                 android:background="@drawable/bt_redondo"
                 android:layout_marginBottom="20dp"
                 />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -39,9 +40,6 @@
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="50dp"
                 >
-
-
-
 
                 <!--Con android:theme="@style/EditTextWhite" le cambiamos el estilo del TextImput y a blanco-->
                 <com.google.android.material.textfield.TextInputLayout
@@ -50,18 +48,16 @@
                     app:startIconDrawable="@drawable/ic_person_gris"
                     >
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/teNameUser"
+                        android:id="@+id/teNickname"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/nombreUsuario"
+                        android:hint="@string/nickname"
                         android:maxLength="15"
-                        android:inputType="textEmailAddress"/>
+                        />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
-
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -75,19 +71,49 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:startIconDrawable="@drawable/ic_email_gris"
+                    app:startIconDrawable="@drawable/ic_person_sin"
                     >
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/teEmail"
+                        android:id="@+id/teNameUser"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/correo"
-                        android:maxLength="25"
-                        android:inputType="textEmailAddress"/>
+                        android:hint="@string/nombre"
+                        android:maxLength="15"
+                        />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                >
+
+                <!--Con android:theme="@style/EditTextWhite" le cambiamos el estilo del TextImput y a blanco-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:startIconDrawable="@drawable/ic_person_sin"
+                    >
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/teApellido"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/apellidos"
+                        android:maxLength="15"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+
+
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -171,6 +197,33 @@
                         android:hint="@string/phone"
                         android:maxLength="20"
                         android:inputType="numberSigned" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                >
+
+                <!--Con android:theme="@style/EditTextWhite" le cambiamos el estilo del TextImput y a blanco-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:startIconDrawable="@drawable/ic_email_gris"
+                    >
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/teEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/correo_electronico"
+                        android:maxLength="25"
+                        android:inputType="textEmailAddress"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
 

@@ -1,12 +1,12 @@
 package com.example.casuallove;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -36,4 +36,9 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+    public void onClickIniciar(View view) {
+
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
+    }
 }

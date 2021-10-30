@@ -38,6 +38,14 @@
     <string name="fiesta">Fiesta</string>
     <string name="otros">Otros </string>
     <string name="escribe_aficion">Escribe afición </string>
-    <string name="creado_correctamente">Creado correctamente... </string>
+    <string name="hello_blank_fragment">hola</string>
+    <string name="creado_correctamente">creaado correctamente</string>
+    <string name="trastioname_picture">transitionnamepicture</string>
+    <string name="editar">Editar</string>
+    <string name="test">esto es un test</string>
+    <string name="cerrarSesion">Cerrar Sesion</string>
+
+    <string name="perfil">Perfil</string>
+
 
 </resources>
