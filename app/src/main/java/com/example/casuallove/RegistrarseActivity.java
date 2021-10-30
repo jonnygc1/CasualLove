@@ -1,19 +1,27 @@
 package com.example.casuallove;
 
+import android.app.DatePickerDialog;
+import android.app.Dialog;
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.DatePicker;
+import android.widget.ImageView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
-import android.app.DatePickerDialog;
-import android.app.Dialog;
-import android.content.Intent;
-import android.content.pm.ActivityInfo;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.DatePicker;
-import android.widget.ImageView;
-
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.Calendar;
@@ -23,6 +31,13 @@ public class RegistrarseActivity extends AppCompatActivity {
     public final int REQUEST_CODE_REGISTRARSE = 1;
     TextInputEditText textInputEditTextFecha;
     ImageView btFechaNacimiento;
+
+    private TextInputEditText tietNameUser;
+    private TextInputEditText tietEmail;
+    private TextInputEditText tietFechaNac;
+    private TextInputEditText tietDireccion;
+    private TextInputEditText tietTelefono;
+    private TextInputEditText tietPassword;
 
     static boolean fechaVacia = true;
     static int fechaDia = 0;
@@ -34,6 +49,13 @@ public class RegistrarseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrarse);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        tietNameUser = findViewById(R.id.teNameUser);
+        tietEmail = findViewById(R.id.teEmail);
+        tietFechaNac = findViewById(R.id.teEmail);
+        tietDireccion = findViewById(R.id.ttDireccion);
+        tietTelefono = findViewById(R.id.teTelefono);
+        tietPassword = findViewById(R.id.tePassword);
 
         btFechaNacimiento = findViewById(R.id.btFechaNacimientos);
         textInputEditTextFecha = findViewById(R.id.ttFecha);
@@ -92,8 +114,50 @@ public class RegistrarseActivity extends AppCompatActivity {
     }
 
     public void onClickSiguiente(View view) {
+
+        ejecutarServicio();
+
         Intent intent = new Intent(this, AficionesActivity.class);
         startActivity(intent);
+    }
+
+    //Manda datos al servidor
+    private void ejecutarServicio() {
+
+        HttpsTrustManager.allowAllSSL();
+
+        String URL = Uri
+                .parse("https://android.casuallove.es/insertar_aficiones_cl.php")
+                .buildUpon()
+                .appendQueryParameter("id", null)
+                .appendQueryParameter("nickname", tietNameUser.getText().toString())
+                .appendQueryParameter("nombre", tietNameUser.getText().toString())
+                .appendQueryParameter("apellidos", tietNameUser.getText().toString())
+                .appendQueryParameter("fecha_nac", tietFechaNac.getText().toString())
+                .appendQueryParameter("direccion", tietDireccion.getText().toString())
+                .appendQueryParameter("telefono", tietTelefono.getText().toString())
+                .appendQueryParameter("email", tietEmail.getText().toString())
+                .appendQueryParameter("password", tietPassword.getText().toString())
+                .build()
+                .toString();
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        //Si procesa o no procesa
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                Toast.makeText(getApplicationContext(), R.string.creado_correctamente, Toast.LENGTH_SHORT).show();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        requestQueue.add(stringRequest);
     }
 
 
