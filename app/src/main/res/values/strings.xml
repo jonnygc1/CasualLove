@@ -16,6 +16,7 @@
     <string name="correo_electronico">Correo Electrónico </string>
     <string name="password_usuario_confirmacion">Confirmacion Contraseña del Usuario </string>
     <string name="siguiente">Siguiente</string>
+    <string name="password_no_coincide">Las contraseñas no coinciden</string>
 
     <!-- RegistrarseActivity2 -->
     <string name="fecha_nacimiento">Fecha de Nacimiento </string>
@@ -39,7 +40,7 @@
     <string name="otros">Otros </string>
     <string name="escribe_aficion">Escribe afición </string>
     <string name="hello_blank_fragment">hola</string>
-    <string name="creado_correctamente">creaado correctamente</string>
+    <string name="creado_correctamente">Creado correctamente</string>
     <string name="trastioname_picture">transitionnamepicture</string>
     <string name="editar">Editar</string>
     <string name="test">esto es un test</string>

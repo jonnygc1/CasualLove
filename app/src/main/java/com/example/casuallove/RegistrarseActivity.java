@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.ImageView;
@@ -32,12 +33,15 @@ public class RegistrarseActivity extends AppCompatActivity {
     TextInputEditText textInputEditTextFecha;
     ImageView btFechaNacimiento;
 
+    private TextInputEditText tietNickname;
     private TextInputEditText tietNameUser;
+    private TextInputEditText tietApellido;
     private TextInputEditText tietEmail;
     private TextInputEditText tietFechaNac;
     private TextInputEditText tietDireccion;
     private TextInputEditText tietTelefono;
     private TextInputEditText tietPassword;
+    private TextInputEditText tietPassword2;
 
     static boolean fechaVacia = true;
     static int fechaDia = 0;
@@ -50,12 +54,15 @@ public class RegistrarseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_registrarse);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
+        tietNickname = findViewById(R.id.teNickname);
         tietNameUser = findViewById(R.id.teNameUser);
+        tietApellido = findViewById(R.id.teApellido);
         tietEmail = findViewById(R.id.teEmail);
         tietFechaNac = findViewById(R.id.teEmail);
         tietDireccion = findViewById(R.id.ttDireccion);
         tietTelefono = findViewById(R.id.teTelefono);
         tietPassword = findViewById(R.id.tePassword);
+        tietPassword2 = findViewById(R.id.tePasswordConfirmar);
 
         btFechaNacimiento = findViewById(R.id.btFechaNacimientos);
         textInputEditTextFecha = findViewById(R.id.ttFecha);
@@ -115,7 +122,13 @@ public class RegistrarseActivity extends AppCompatActivity {
 
     public void onClickSiguiente(View view) {
 
-        ejecutarServicio();
+        if (passwordCorrecta()) {
+
+            ejecutarServicio();
+        } else {
+
+            Toast.makeText(getApplicationContext(), R.string.password_no_coincide, Toast.LENGTH_SHORT).show();
+        }
 
         Intent intent = new Intent(this, AficionesActivity.class);
         startActivity(intent);
@@ -127,12 +140,12 @@ public class RegistrarseActivity extends AppCompatActivity {
         HttpsTrustManager.allowAllSSL();
 
         String URL = Uri
-                .parse("https://android.casuallove.es/insertar_aficiones_cl.php")
+                .parse("https://android.casuallove.es/insertar_usuario_cl.php")
                 .buildUpon()
                 .appendQueryParameter("id", null)
-                .appendQueryParameter("nickname", tietNameUser.getText().toString())
+                .appendQueryParameter("nickname", tietNickname.getText().toString())
                 .appendQueryParameter("nombre", tietNameUser.getText().toString())
-                .appendQueryParameter("apellidos", tietNameUser.getText().toString())
+                .appendQueryParameter("apellidos", tietApellido.getText().toString())
                 .appendQueryParameter("fecha_nac", tietFechaNac.getText().toString())
                 .appendQueryParameter("direccion", tietDireccion.getText().toString())
                 .appendQueryParameter("telefono", tietTelefono.getText().toString())
@@ -160,6 +173,19 @@ public class RegistrarseActivity extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 
+    public boolean passwordCorrecta() {
+
+        String password1 = tietPassword.getText().toString();
+        String password2 = tietPassword2.getText().toString();
+
+        if (password1.equals(password2)) {
+
+            Log.d("XYZ", "Strings: " + password1 + " " + password2);
+            return true;
+        }
+
+        return false;
+    }
 
     public void onClickElegirFechaNacimiento(View view) {
 
